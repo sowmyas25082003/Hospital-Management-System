@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Receptionist Management</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/table.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="javascript:history.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+    </a>
+
+<div class="page-header">
+
+<h1>Receptionist Management</h1>
+
+<a href="{{ url_for('add_receptionist') }}" class="add-btn">
+<i class="fa-solid fa-user-plus"></i>
+Add Receptionist
+</a>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Name</th>
+<th>Phone</th>
+<th>Email</th>
+<th>Shift</th>
+<th>Username</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for receptionist in receptionists %}
+
+<tr>
+
+<td>{{ receptionist.id }}</td>
+<td>{{ receptionist.receptionist_name }}</td>
+<td>{{ receptionist.phone }}</td>
+<td>{{ receptionist.email }}</td>
+<td>{{ receptionist.shift }}</td>
+<td>{{ receptionist.username }}</td>
+<td>{{ receptionist.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

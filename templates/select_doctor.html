@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Select Doctor</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/form.css') }}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <h2>Select Your Doctor</h2>
+
+    <p style="text-align: center; margin-bottom: 25px; color: #555;">
+        Department: <strong>{{ department }}</strong>
+    </p>
+
+
+    <div class="doctors-grid">
+
+        {% for doctor in doctors %}
+
+        <div class="doctor-card">
+
+            <img
+                src="{{ url_for('static', filename='uploads/doctors/' + doctor.photo) }}"
+                alt="{{ doctor.doctor_name }}">
+
+
+            <h3>
+                {{ doctor.doctor_name }}
+            </h3>
+
+
+            <p>
+                <strong>Specialization:</strong>
+                {{ doctor.specialization }}
+            </p>
+
+
+            <p>
+                <strong>Qualification:</strong>
+                {{ doctor.qualification }}
+            </p>
+
+
+            <p>
+                <strong>Experience:</strong>
+                {{ doctor.experience }} Years
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                {{ doctor.status }}
+            </p>
+
+
+            <form
+                action="{{ url_for('confirm_doctor') }}"
+                method="POST">
+
+                <input
+                    type="hidden"
+                    name="doctor_id"
+                    value="{{ doctor.doctor_id }}">
+
+                <input
+                    type="hidden"
+                    name="department"
+                    value="{{ department }}">
+
+                <input
+                    type="hidden"
+                    name="patient_name"
+                    value="{{ patient_name }}">
+
+                <input
+                    type="hidden"
+                    name="age"
+                    value="{{ age }}">
+
+                <input
+                    type="hidden"
+                    name="gender"
+                    value="{{ gender }}">
+
+                <input
+                    type="hidden"
+                    name="phone"
+                    value="{{ phone }}">
+
+                <input
+                    type="hidden"
+                    name="address"
+                    value="{{ address }}">
+
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    Select Doctor
+
+                </button>
+
+                <a href="javascript:history.back()" class="back-btn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+                </a>
+
+            </form>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

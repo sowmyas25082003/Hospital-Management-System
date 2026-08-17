@@ -1,0 +1,858 @@
+
+/* =========================================
+   MEDCARE - APPOINTMENT MODULE
+   FULL SCREEN / FULL WIDTH VERSION
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+/* ================= ROOT ================= */
+
+:root{
+    --primary:#1E3A5F;
+    --primary-dark:#162E4A;
+
+    --secondary:#2BB673;
+    --secondary-hover:#23965F;
+
+    --white:#FFFFFF;
+    --light:#F4F7FC;
+    --light-green:#E8F8F0;
+
+    --text:#1F2937;
+    --gray:#666666;
+
+    --border:#E1E6ED;
+
+    --shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+
+    background:var(--light);
+
+    color:var(--text);
+
+    padding:25px 30px;
+
+    overflow-x:hidden;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+.container{
+    width:100%;
+    max-width:none;
+
+    margin:0 auto;
+
+    background:var(--white);
+
+    padding:35px;
+
+    border-radius:18px;
+
+    box-shadow:var(--shadow);
+
+    border:1px solid var(--border);
+}
+
+
+/* ================= PAGE TITLE ================= */
+
+.container h2{
+    text-align:center;
+
+    color:var(--primary);
+
+    font-size:30px;
+
+    font-weight:600;
+
+    margin-bottom:30px;
+}
+
+.container h2::after{
+    content:"";
+
+    display:block;
+
+    width:55px;
+    height:4px;
+
+    margin:9px auto 0;
+
+    background:var(--secondary);
+
+    border-radius:20px;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+
+/* ================= FORM ROW ================= */
+
+.row{
+    display:flex;
+
+    gap:25px;
+
+    margin-bottom:22px;
+
+    width:100%;
+}
+
+
+/* ================= INPUT BOX ================= */
+
+.input-box{
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.input-box label{
+    margin-bottom:8px;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:var(--primary);
+}
+
+.input-box input,
+.input-box select,
+.input-box textarea{
+    width:100%;
+
+    padding:13px 14px;
+
+    border:1px solid #D7DDE5;
+
+    border-radius:9px;
+
+    background:#FFFFFF;
+
+    color:var(--text);
+
+    font-size:14px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder{
+    color:#A0A8B2;
+}
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus{
+    border-color:var(--secondary);
+
+    box-shadow:
+        0 0 0 3px rgba(43,182,115,.10);
+}
+
+textarea{
+    resize:vertical;
+
+    min-height:110px;
+}
+
+
+/* ================= MAIN BUTTON ================= */
+
+button{
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:9px;
+
+    background:var(--secondary);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:
+        0 6px 15px rgba(43,182,115,.15);
+}
+
+button:hover{
+    background:var(--secondary-hover);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(43,182,115,.22);
+}
+
+button i{
+    margin-right:8px;
+}
+
+
+/* =========================================
+   DOCTOR SELECTION
+========================================= */
+
+.doctors-container{
+    width:100%;
+}
+
+.doctors-grid{
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:25px;
+}
+
+
+/* ================= DOCTOR CARD ================= */
+
+.doctor-card{
+    width:100%;
+
+    background:var(--white);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:28px;
+
+    text-align:center;
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,.06);
+
+    transition:.3s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+
+/* GREEN TOP LINE */
+
+.doctor-card::before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:var(--secondary);
+}
+
+
+/* CARD HOVER */
+
+.doctor-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.10);
+}
+
+
+/* ================= DOCTOR PHOTO ================= */
+
+.doctor-card img{
+    width:130px;
+    height:130px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid var(--secondary);
+
+    margin-bottom:15px;
+
+    box-shadow:
+        0 6px 15px rgba(0,0,0,.10);
+
+    transition:.3s;
+}
+
+.doctor-card img:hover{
+    transform:scale(1.05);
+}
+
+
+/* ================= DOCTOR NAME ================= */
+
+.doctor-card h3{
+    color:var(--primary);
+
+    font-size:20px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+}
+
+
+/* ================= DOCTOR INFORMATION ================= */
+
+.doctor-card p{
+    color:#555;
+
+    font-size:14px;
+
+    margin:6px 0;
+}
+
+.doctor-card p strong{
+    color:var(--primary);
+}
+
+
+/* ================= SELECT DOCTOR BUTTON ================= */
+
+.doctor-card button{
+    margin-top:15px;
+
+    width:80%;
+
+    padding:11px;
+
+    font-size:14px;
+}
+
+
+/* =========================================
+   APPOINTMENT DETAILS
+========================================= */
+
+.doctor-card + form{
+    margin-top:25px;
+}
+
+
+/* ================= SELECTED DOCTOR ================= */
+
+.appointment-doctor{
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    background:#F8FAFC;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:22px;
+
+    margin-bottom:30px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,.04);
+}
+
+
+/* ================= DOCTOR IMAGE ================= */
+
+.appointment-doctor img{
+    width:120px;
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:4px solid var(--secondary);
+
+    flex-shrink:0;
+}
+
+
+/* ================= DOCTOR INFO ================= */
+
+.appointment-doctor-info{
+    flex:1;
+}
+
+.appointment-doctor-info h3{
+    color:var(--primary);
+
+    font-size:22px;
+
+    font-weight:600;
+
+    margin-bottom:10px;
+}
+
+.appointment-doctor-info p{
+    margin:5px 0;
+
+    color:#555;
+
+    font-size:14px;
+}
+
+.appointment-doctor-info strong{
+    color:var(--primary);
+}
+
+
+/* ================= APPOINTMENT FIELDS ================= */
+
+.appointment-fields{
+    width:100%;
+
+    margin-top:10px;
+}
+
+
+/* ================= BOOK APPOINTMENT ================= */
+
+.appointment-fields button{
+    margin-top:15px;
+
+    background:var(--secondary);
+}
+
+.appointment-fields button:hover{
+    background:var(--secondary-hover);
+}
+
+
+/* =========================================
+   SUCCESS PAGE
+========================================= */
+
+.success-message{
+    width:100%;
+
+    text-align:center;
+
+    padding:65px 40px;
+
+    background:var(--white);
+
+    border-radius:16px;
+}
+
+
+/* ================= SUCCESS ICON ================= */
+
+.success-icon{
+    width:90px;
+    height:90px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin:0 auto 25px;
+
+    background:var(--light-green);
+
+    color:var(--secondary);
+
+    border-radius:50%;
+
+    font-size:45px;
+
+    box-shadow:
+        0 0 0 10px #F3FBF7;
+}
+
+
+/* ================= SUCCESS HEADING ================= */
+
+.success-message h2{
+    color:var(--primary);
+
+    font-size:30px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+}
+
+.success-message h2::after{
+    display:none;
+}
+
+
+/* ================= SUCCESS TEXT ================= */
+
+.success-message p{
+    color:#555;
+
+    font-size:16px;
+
+    margin:8px 0;
+}
+
+.success-message p:last-of-type{
+    color:var(--secondary);
+
+    font-size:15px;
+
+    font-weight:500;
+}
+
+
+/* =========================================
+   SUCCESS BUTTON
+========================================= */
+
+.success-button{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:25px;
+
+    padding:12px 30px;
+
+    background:var(--secondary);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:9px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    box-shadow:
+        0 6px 15px rgba(43,182,115,.15);
+}
+
+.success-button i{
+    margin-right:8px;
+}
+
+.success-button:hover{
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(30,58,95,.18);
+}
+
+
+/* =========================================
+   FULL WIDTH BACK BUTTON
+========================================= */
+
+.back-btn{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:14px 20px;
+
+    background:var(--primary);
+
+    color:white;
+
+    text-decoration:none;
+
+    border-radius:9px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+    box-shadow:
+        0 6px 15px rgba(30,58,95,.15);
+}
+
+.back-btn:hover{
+    background:var(--secondary);
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(43,182,115,.20);
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media(max-width:1000px){
+
+    body{
+        padding:20px;
+    }
+
+    .container{
+        padding:28px;
+    }
+
+    .doctors-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .row{
+        gap:18px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .container{
+        width:100%;
+
+        padding:22px;
+
+        border-radius:14px;
+    }
+
+    .container h2{
+        font-size:25px;
+    }
+
+    .row{
+        flex-direction:column;
+
+        gap:18px;
+    }
+
+    .doctors-grid{
+        grid-template-columns:1fr;
+    }
+
+    .doctor-card{
+        width:100%;
+    }
+
+    .appointment-doctor{
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:25px;
+    }
+
+    .appointment-doctor img{
+        width:110px;
+        height:110px;
+    }
+
+    .appointment-doctor-info{
+        width:100%;
+    }
+
+    .success-message{
+        padding:45px 20px;
+    }
+
+    .success-message h2{
+        font-size:25px;
+    }
+
+    .success-icon{
+        width:75px;
+        height:75px;
+
+        font-size:38px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media(max-width:450px){
+
+    body{
+        padding:10px;
+    }
+
+    .container{
+        padding:18px;
+    }
+
+    .container h2{
+        font-size:22px;
+    }
+
+    .doctor-card{
+        padding:22px 15px;
+    }
+
+    .doctor-card img{
+        width:110px;
+        height:110px;
+    }
+
+    .doctor-card h3{
+        font-size:18px;
+    }
+
+    .success-button{
+        width:100%;
+    }
+
+    .back-btn{
+        padding:13px;
+    }
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: #1E3A5F;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.back-btn:hover {
+    background: #2BB673;
+    color: white;
+    transform: translateX(-3px);
+}
+
+.back-btn span {
+    font-size: 18px;
+}
+
+
+@media(max-width:450px){
+
+    body{
+        padding:10px;
+    }
+
+    .page-header{
+        padding:18px;
+    }
+
+    .page-header h1{
+        font-size:21px;
+    }
+
+    .edit-btn,
+    .delete-btn{
+        padding:7px 10px;
+
+        font-size:11px;
+    }
+
+    .card{
+        padding:28px 20px;
+    }
+
+    .card h2{
+        font-size:34px;
+    }
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: #1E3A5F;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.back-btn:hover {
+    background: #2BB673;
+    color: white;
+    transform: translateX(-3px);
+}
+
+.back-btn span {
+    font-size: 18px;
+}

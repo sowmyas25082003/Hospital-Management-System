@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCare Hospital</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+
+    <div class="left-panel">
+
+        <div class="left-content">
+
+            <h1>
+                MedCare<br>
+                Hospital
+            </h1>
+
+            <p>
+                Delivering Compassionate Healthcare with Modern Technology.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Expert Doctors</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Emergency Care</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Modern Infrastructure</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Digital Medical Records</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RIGHT SIDE -->
+
+    <div class="right-panel">
+
+        <div class="welcome-box">
+
+            <h4>WELCOME TO</h4>
+
+            <h1>Hospital Management System</h1>
+
+            <p>
+                A secure and cloud-based platform for managing hospital
+                operations including patients, doctors, appointments,
+                billing, reports and medical records.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <i class="fa-solid fa-user-injured"></i>
+                    <h3>Patients</h3>
+                    <p>Manage patient information securely.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <h3>Doctors</h3>
+                    <p>Manage doctors and departments.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <h3>Appointments</h3>
+                    <p>Book appointments quickly.</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-file-medical"></i>
+                    <h3>Medical Records</h3>
+                    <p>Store reports digitally.</p>
+                </div>
+
+            </div>
+
+            <div class="buttons">
+
+                <a href="{{ url_for('login') }}" class="login-btn">
+                    Login
+                </a>
+
+                <a href="{{ url_for('add_appointment') }}" class="appointment-btn">
+                    Book Appointment
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <h3>MedCare Hospital Management System</h3>
+
+        <p>
+            Smart • Secure • Reliable Healthcare Management
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">Home</a>
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('add_appointment') }}">Book Appointment</a>
+
+        </div>
+
+        <hr>
+
+        <p class="copyright">
+            © 2026 MedCare Hospital Management System. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

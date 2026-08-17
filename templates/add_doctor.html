@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Doctor</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/form.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Doctor Registration</h2>
+
+<form action="{{ url_for('add_doctor') }}" method="POST">
+
+<div class="row">
+
+<div class="input-box">
+<label>Doctor Name</label>
+<input type="text" name="doctor_name" required>
+</div>
+
+<div class="input-box">
+<label>Specialization</label>
+<input type="text" name="specialization" required>
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="input-box">
+<label>Qualification</label>
+<input type="text" name="qualification" required>
+</div>
+
+<div class="input-box">
+<label>Phone</label>
+<input type="text" name="phone" required>
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="input-box">
+<label>Email</label>
+<input type="email" name="email" required>
+</div>
+
+<div class="input-box">
+<label>Experience</label>
+<input type="number" name="experience" required>
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="input-box">
+<label>Department</label>
+<input type="text" name="department" required>
+</div>
+
+<div class="input-box">
+
+<label>Status</label>
+
+<select name="status">
+
+<option value="Available">Available</option>
+
+<option value="On Leave">On Leave</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Doctor
+
+</button>
+
+<a href="javascript:history.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+</a>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

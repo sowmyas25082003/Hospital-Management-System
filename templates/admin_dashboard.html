@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/admin.css') }}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-hospital"></i>
+
+            <h2>MedCare</h2>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <a href="{{ url_for('admin_dashboard') }}">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('patients') }}">
+                    <i class="fa-solid fa-user-injured"></i>
+                    Patients
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('doctors') }}">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    Doctors
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('appointments') }}">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    Appointments
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('billing') }}">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    Billing
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('medical_history') }}">
+                    <i class="fa-solid fa-notes-medical"></i>
+                    Medical History
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('prescriptions') }}">
+                    <i class="fa-solid fa-prescription"></i>
+                    Prescriptions
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('lab_reports') }}">
+                    <i class="fa-solid fa-flask"></i>
+                    Lab Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('notifications') }}">
+                    <i class="fa-solid fa-bell"></i>
+                    Notifications
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('reports') }}">
+                    <i class="fa-solid fa-file-medical"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('home') }}">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <div class="topbar">
+
+            <h1>Admin Dashboard</h1>
+
+            <span>Welcome, Admin</span>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <i class="fa-solid fa-user-injured"></i>
+                <h2>{{ total_patients }}</h2>
+                <p>Total Patients</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-user-doctor"></i>
+                <h2>{{ total_doctors }}</h2>
+                <p>Total Doctors</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-calendar-check"></i>
+                <h2>{{ total_appointments }}</h2>
+                <p>Appointments</p>
+            </div>
+
+            <div class="card">
+                <i class="fa-solid fa-money-bill-wave"></i>
+                <h2>₹{{ revenue }}</h2>
+                <p>Revenue</p>
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

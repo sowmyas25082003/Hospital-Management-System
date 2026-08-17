@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Lab Report</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/form.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Add Lab Report</h2>
+
+<form action="{{ url_for('add_lab_report') }}" method="POST">
+
+<div class="row">
+
+<div class="input-box">
+<label>Patient Name</label>
+<input type="text" name="patient_name" required>
+</div>
+
+<div class="input-box">
+<label>Doctor Name</label>
+<input type="text" name="doctor_name" required>
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="input-box">
+<label>Test Name</label>
+<input type="text" name="test_name" required>
+</div>
+
+<div class="input-box">
+<label>Result</label>
+<input type="text" name="result" required>
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="input-box">
+<label>Report Date</label>
+<input type="date" name="report_date" required>
+</div>
+
+<div class="input-box">
+
+<label>Status</label>
+
+<select name="status">
+
+<option value="Pending">Pending</option>
+
+<option value="Completed">Completed</option>
+
+<option value="Delivered">Delivered</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-flask-vial"></i>
+
+Save Lab Report
+
+</button>
+
+<a href="javascript:history.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+    </a>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Billing Management</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/table.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="javascript:history.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+    </a>
+
+
+<div class="page-header">
+
+<h1>Billing System</h1>
+
+<a href="{{ url_for('add_bill') }}" class="add-btn">
+<i class="fa-solid fa-file-invoice-dollar"></i>
+Create Bill
+</a>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Patient</th>
+<th>Doctor</th>
+<th>Consultation</th>
+<th>Medicine</th>
+<th>Lab</th>
+<th>Total</th>
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for bill in bills %}
+
+<tr>
+
+<td>{{ bill.id }}</td>
+<td>{{ bill.patient_name }}</td>
+<td>{{ bill.doctor_name }}</td>
+<td>₹{{ bill.consultation_fee }}</td>
+<td>₹{{ bill.medicine_fee }}</td>
+<td>₹{{ bill.lab_fee }}</td>
+<td>₹{{ bill.total_amount }}</td>
+<td>{{ bill.payment_status }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

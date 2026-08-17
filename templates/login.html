@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | MedCare Hospital</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+
+    <div class="left-panel">
+
+        <div class="left-content">
+
+            <h1>
+                MedCare<br>
+                Hospital
+            </h1>
+
+            <p>
+                Delivering Compassionate Healthcare with Modern Technology.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Expert Doctors</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Emergency Care</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Modern Infrastructure</span>
+                </div>
+
+                <div class="feature">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Digital Medical Records</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="right-panel">
+
+        <div class="login-box">
+
+            <h2>Welcome Back</h2>
+
+            <p>
+                Login to continue to the Hospital Management System.
+            </p>
+
+            <form action="/login" method="POST">
+
+                <div class="input-group">
+
+                    <label>
+                        <i class="fa-solid fa-user"></i>
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Enter Username"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>
+                        <i class="fa-solid fa-lock"></i>
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Enter Password"
+                        required>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>
+                        <i class="fa-solid fa-user-tag"></i>
+                        Role
+                    </label>
+
+                    <select name="role" required>
+
+                        <option value="">Select Role</option>
+
+                        <option value="admin">Admin</option>
+
+                        <option value="doctor">Doctor</option>
+
+                        <option value="receptionist">Receptionist</option>
+
+                    </select>
+
+                </div>
+
+                <button type="submit" class="login-button">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <div class="back-home">
+
+                <a href="{{ url_for('home') }}">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

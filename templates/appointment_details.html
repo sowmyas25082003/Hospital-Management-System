@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Appointment Details</title>
+
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='css/form.css') }}">
+    
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Appointment Details</h2>
+
+
+    <!-- Selected Doctor -->
+
+    <div class="doctor-card">
+
+        <img
+            src="{{ url_for('static', filename='uploads/doctors/' + doctor.photo) }}"
+            alt="{{ doctor.doctor_name }}">
+
+        <h3>
+            {{ doctor.doctor_name }}
+        </h3>
+
+        <p>
+            <strong>Specialization:</strong>
+            {{ doctor.specialization }}
+        </p>
+
+        <p>
+            <strong>Qualification:</strong>
+            {{ doctor.qualification }}
+        </p>
+
+        <p>
+            <strong>Experience:</strong>
+            {{ doctor.experience }} Years
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+            {{ doctor.status }}
+        </p>
+
+    </div>
+
+
+    <!-- Appointment Form -->
+
+    <form
+        action="{{ url_for('save_appointment') }}"
+        method="POST">
+
+
+        <!-- Hidden Patient Details -->
+
+        <input
+            type="hidden"
+            name="patient_name"
+            value="{{ patient_name }}">
+
+        <input
+            type="hidden"
+            name="age"
+            value="{{ age }}">
+
+        <input
+            type="hidden"
+            name="gender"
+            value="{{ gender }}">
+
+        <input
+            type="hidden"
+            name="phone"
+            value="{{ phone }}">
+
+        <input
+            type="hidden"
+            name="address"
+            value="{{ address }}">
+
+        <input
+            type="hidden"
+            name="doctor_id"
+            value="{{ doctor.doctor_id }}">
+
+        <input
+            type="hidden"
+            name="department"
+            value="{{ department }}">
+
+
+        <!-- Date and Time -->
+
+        <div class="row">
+
+            <div class="input-box">
+
+                <label>Appointment Date</label>
+
+                <input
+                    type="date"
+                    name="appointment_date"
+                    required>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>Appointment Time</label>
+
+                <input
+                    type="time"
+                    name="appointment_time"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <!-- Book Appointment -->
+
+        <button type="submit">
+
+            <i class="fa-solid fa-calendar-check"></i>
+
+            Book Appointment
+
+        </button>
+
+        <a href="javascript:history.back()" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

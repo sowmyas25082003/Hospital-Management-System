@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prescription Management</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/table.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="javascript:history.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+    </a>
+
+<div class="page-header">
+
+<h1>Prescription Management</h1>
+
+<a href="{{ url_for('add_prescription') }}" class="add-btn">
+<i class="fa-solid fa-prescription"></i>
+Add Prescription
+</a>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Patient</th>
+<th>Doctor</th>
+<th>Medicines</th>
+<th>Dosage</th>
+<th>Instructions</th>
+<th>Date</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+{% for prescription in prescriptions %}
+
+<tr>
+
+<td>{{ prescription.id }}</td>
+<td>{{ prescription.patient_name }}</td>
+<td>{{ prescription.doctor_name }}</td>
+<td>{{ prescription.medicines }}</td>
+<td>{{ prescription.dosage }}</td>
+<td>{{ prescription.instructions }}</td>
+<td>{{ prescription.prescription_date }}</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Hospital Reports</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/table.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <a href="javascript:history.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+    </a>
+
+<div class="page-header">
+
+    <h1>Hospital Reports</h1>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h2>{{ total_patients }}</h2>
+<p>Total Patients</p>
+</div>
+
+<div class="card">
+<h2>{{ total_doctors }}</h2>
+<p>Total Doctors</p>
+</div>
+
+<div class="card">
+<h2>{{ total_appointments }}</h2>
+<p>Total Appointments</p>
+</div>
+
+<div class="card">
+<h2>₹{{ revenue }}</h2>
+<p>Total Revenue</p>
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

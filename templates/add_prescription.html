@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Prescription</title>
+
+    <link rel="stylesheet"
+href="{{ url_for('static', filename='css/form.css') }}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Prescription Details</h2>
+
+    <form action="{{ url_for('add_prescription') }}" method="POST">
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Patient Name</label>
+                <input type="text"
+                    name="patient_name"
+                    placeholder="Enter Patient Name"
+                    required>
+            </div>
+
+            <div class="input-box">
+                <label>Doctor Name</label>
+                <input type="text"
+                    name="doctor_name"
+                    placeholder="Enter Doctor Name"
+                    required>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Medicines</label>
+                <textarea
+                    name="medicines"
+                    rows="4"
+                    placeholder="Enter Medicines"
+                    required></textarea>
+            </div>
+
+            <div class="input-box">
+                <label>Dosage</label>
+                <input type="text"
+                    name="dosage"
+                    placeholder="Example: 1 Tablet Twice Daily"
+                    required>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="input-box">
+                <label>Instructions</label>
+                <textarea
+                    name="instructions"
+                    rows="4"
+                    placeholder="Special Instructions"
+                    required></textarea>
+            </div>
+
+            <div class="input-box">
+                <label>Prescription Date</label>
+                <input type="date"
+                    name="prescription_date"
+                    required>
+            </div>
+
+        </div>
+
+        <button type="submit">
+            <i class="fa-solid fa-floppy-disk"></i>
+            Save Prescription
+        </button>
+
+        <a href="javascript:history.back()" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

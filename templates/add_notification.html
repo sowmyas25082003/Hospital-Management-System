@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Add Notification</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/form.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Add Notification</h2>
+
+<form action="{{ url_for('add_notification') }}" method="POST">
+
+<div class="row">
+
+<div class="input-box">
+
+<label>Notification Title</label>
+
+<input
+type="text"
+name="title"
+placeholder="Enter Notification Title"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Status</label>
+
+<select name="status">
+
+<option value="Unread">Unread</option>
+
+<option value="Read">Read</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="input-box" style="width:100%;">
+
+<label>Message</label>
+
+<textarea
+name="message"
+rows="6"
+placeholder="Enter Notification Message"
+required></textarea>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="input-box">
+
+<label>Date & Time</label>
+
+<input
+type="datetime-local"
+name="notification_date"
+required>
+
+</div>
+
+</div>
+
+<button type="submit">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Notification
+
+</button>
+
+<a href="javascript:history.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+    </a>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

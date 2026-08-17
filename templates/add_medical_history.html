@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Add Medical History</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/form.css') }}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Back Button -->
+
+    <a href="javascript:history.back()" class="back-btn">
+        <i class="fa-solid fa-arrow-left"></i>
+        Back
+    </a>
+
+
+    <h2>Add Medical History</h2>
+
+
+    <form method="POST">
+
+        <!-- Patient + Doctor -->
+
+        <div class="row">
+
+            <div class="input-box">
+
+                <label>Patient Name</label>
+
+                <input
+                    type="text"
+                    name="patient_name"
+                    placeholder="Enter Patient Name"
+                    required>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>Doctor Name</label>
+
+                <input
+                    type="text"
+                    name="doctor_name"
+                    placeholder="Enter Doctor Name"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <!-- Diagnosis + Visit Date -->
+
+        <div class="row">
+
+            <div class="input-box">
+
+                <label>Diagnosis</label>
+
+                <input
+                    type="text"
+                    name="diagnosis"
+                    placeholder="Enter Diagnosis"
+                    required>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>Visit Date</label>
+
+                <input
+                    type="date"
+                    name="visit_date"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <!-- Treatment -->
+
+        <div class="row">
+
+            <div class="input-box">
+
+                <label>Treatment</label>
+
+                <textarea
+                    name="treatment"
+                    rows="4"
+                    placeholder="Enter Treatment Details"
+                    required></textarea>
+
+            </div>
+
+
+            <div class="input-box">
+
+                <label>Medicines</label>
+
+                <textarea
+                    name="medicines"
+                    rows="4"
+                    placeholder="Enter Medicines"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- Submit -->
+
+        <button type="submit">
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Medical History
+
+        </button>
+
+        <a href="javascript:history.back()" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back
+        </a>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>
