@@ -1,4 +1,4 @@
-﻿Flask
+Flask
 mysql-connector-python
 gunicorn
 boto3
